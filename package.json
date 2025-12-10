@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Model Context Protocol Server for n8n",
   "main": "server.js",
-  "type": "module",
+  "type": "module", // <--- ESTA LINHA É CRÍTICA
   "scripts": {
     "start": "node server.js" 
   },
