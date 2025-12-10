@@ -1,15 +1,10 @@
-{
   "name": "mcp-server-n8n",
   "version": "1.0.0",
   "description": "Servidor MCP para n8n",
   "main": "servidor.js",
-  "scripts": {
-    "start": "node servidor.js" 
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "node-fetch": "^2.6.9",
-    "mathjs": "^12.4.1"
-  }
-}
-}
+  "scripts":
+  "start": "node servidor.js",
+  "dependencies":
+  "express": "^4.18.2",
+  "node-fetch": "^2.6.9",
+  "mathjs": "^12.4.1"
