@@ -1,6 +1,6 @@
 {
   "name": "mcp-server-n8n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Model Context Protocol Server for n8n",
   "main": "server.js",
   "type": "module",
