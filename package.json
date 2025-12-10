@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Model Context Protocol Server for n8n",
   "main": "server.js",
-  "type": "module",
+  "type": "module", 
   "scripts": {
     "start": "node server.js" 
   },
