@@ -1,6 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 const { evaluate } = require("mathjs");
+// ... o resto do seu código
 
 const app = express();
 app.use(express.json());
