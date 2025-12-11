@@ -1,6 +1,6 @@
-import express from "express";
-import fetch from "node-fetch";
-import { evaluate } from "mathjs";
+const express = require("express");
+const fetch = require("node-fetch");
+const { evaluate } = require("mathjs");
 
 const app = express();
 app.use(express.json());
@@ -13,9 +13,34 @@ app.get("/", (req, res) => {
     res.json({ status: "✅ MCP Server active and running" });
 });
 
-// O resto do seu código de lógica MCP...
+// The main route for MCP calls
 app.post("/call", async (req, res) => {
-    // ... (Seu código MCP aqui)
+    try {
+        const { tool, input } = req.body;
+        
+        if (!tool) {
+            return res.status(400).json({ error: "The 'tool' field is required." });
+        }
+        
+        // --- YOUR MCP LOGIC STARTS HERE ---
+        
+        if (tool === "calculate") {
+            try {
+                const result = evaluate(input);
+                res.json({ result: result.toString() });
+            } catch (e) {
+                res.status(400).json({ error: "Invalid math expression." });
+            }
+            return;
+        }
+        
+        // Default response for unknown tools
+        res.status(404).json({ error: `Tool '${tool}' not found.` });
+
+    } catch (e) {
+        console.error("Server Error:", e);
+        res.status(500).json({ error: "Internal Server Error." });
+    }
 });
 
 // Start the server
